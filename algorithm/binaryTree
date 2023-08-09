@@ -1,0 +1,125 @@
+package word
+
+import (
+	"fmt"
+	"github.com/eapache/queue"
+)
+
+func Tree() {
+	tree := &Node{
+		Data: "A",
+		Left: &Node{
+			Data: "B",
+			Left: &Node{
+				Data:  "D",
+				Left:  nil,
+				Right: nil,
+			},
+			Right: &Node{
+				Data: "C",
+				Left: nil,
+				Right: &Node{
+					Data:  "H",
+					Left:  nil,
+					Right: nil,
+				},
+			},
+		},
+		Right: &Node{
+			Data: "E",
+			Left: &Node{
+				Data:  "G",
+				Left:  nil,
+				Right: nil,
+			},
+			Right: &Node{
+				Data:  "F",
+				Left:  nil,
+				Right: nil,
+			},
+		},
+	}
+	queB := []*Node{tree}
+	tree.Bforder(queB, tree)
+}
+
+type Node struct {
+	Data  interface{}
+	Left  *Node
+	Right *Node
+}
+
+type BiTree interface {
+	Inorder(tree *Node)
+	Preorder(tree *Node)
+	Postorder(tree *Node)
+	Bforder(tree *Node)
+	Dforder(tree *Node)
+}
+
+func (n Node) Inorder(tree *Node) {
+	if tree == nil {
+		return
+	}
+	fmt.Printf("%s ", tree.Data)
+	n.Inorder(tree.Left)
+	n.Inorder(tree.Right)
+}
+
+func (n Node) Preorder(tree *Node) {
+	if tree == nil {
+		return
+	}
+	n.Preorder(tree.Left)
+	fmt.Printf("%s ", tree.Data)
+	n.Preorder(tree.Right)
+}
+
+func (n Node) Postorder(tree *Node) {
+	if tree == nil {
+		return
+	}
+	n.Postorder(tree.Left)
+	n.Postorder(tree.Right)
+	fmt.Printf("%s ", tree.Data)
+}
+
+func (n Node) Bforder(queB []*Node, tree *Node) {
+	if tree == nil {
+		fmt.Println("Bforder : tree is empty")
+		return
+	}
+
+	lenQueB := len(queB)
+	for lenQueB > 0 {
+		if queB[0].Left != nil {
+			queB = append(queB, queB[0].Left)
+		}
+		if queB[0].Right != nil {
+			queB = append(queB, queB[0].Right)
+		}
+		fmt.Printf("%s ", queB[0].Data.(string))
+		queB = queB[1:]
+		activeLen := len(queB)
+		if activeLen == 0 {
+			break
+		}
+	}
+}
+
+func (n Node) Dforder(queA *queue.Queue, tree *Node) {
+	if tree == nil {
+		return
+	}
+	fmt.Printf("%c ", tree.Data)
+	n.Dforder(queA, tree.Left)
+	n.Dforder(queA, tree.Right)
+	queA.Add(tree.Data)
+	queA.Remove()
+}
+
+//xianxu ABDCHEGF
+//zhongxu DBCHAGEF
+//houxu DHCBFGEA
+//guangdu youxian ABEDCGFH
+//shendu youxian ABDCHEGF
