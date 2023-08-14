@@ -1,0 +1,5 @@
+1.枚举类型为 a= 'Y'
+2.加上null值 a is null  != <> 不包括null数据
+3.select distinct a 对a结果去重   order by a ASC 升序排列
+4.length() sql统计字符串长度函数
+5.left join用法  select * from a left join b on a.id =b.id
