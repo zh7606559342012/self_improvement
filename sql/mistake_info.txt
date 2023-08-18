@@ -3,8 +3,9 @@
 3.select distinct a 对a结果去重   order by a ASC 升序排列
 4.length() sql统计字符串长度函数
 5.left join用法  select * from a left join b on a.id =b.id
-6.datediff(startime,endtime)计算日期差的时间
+6.datediff(startime,endtime)计算日期差的时间 以天为单位，a>b 返回正数，b>a返回负数
 7.round(a,3)保存a的3个小数  avg(a)求列a的平均值， if(a,b,c)条件a成立为b否则为c
 8.concat(a,b)拼接a,b字串，UPPER(a),a字串变大写，LOWER(a),a字串变小写，substring(a,b,c)，a字串从b开始提c个字符
 9.where a regexp 's' 判断a字串是否含有s字串
 10.where里面不能加count函数，可以在having关键字里使用，having必须前面加上group by这个关键字
+11.'\\bDIAB1.*' \\b匹配以DIAB1为字串的序列开始头  .*后面一个或多个字符
