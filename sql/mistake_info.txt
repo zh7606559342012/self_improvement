@@ -9,3 +9,4 @@
 9.where a regexp 's' 判断a字串是否含有s字串
 10.where里面不能加count函数，可以在having关键字里使用，having必须前面加上group by这个关键字
 11.'\\bDIAB1.*' \\b匹配以DIAB1为字串的序列开始头  .*后面一个或多个字符
+12.ifnull(a,b)语法 如果a的值为null赋值为b
