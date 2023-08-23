@@ -10,3 +10,7 @@
 10.where里面不能加count函数，可以在having关键字里使用，having必须前面加上group by这个关键字
 11.'\\bDIAB1.*' \\b匹配以DIAB1为字串的序列开始头  .*后面一个或多个字符
 12.where id in a,b,c  这种用法可以选出id在a,b,c中的结果
+13.ifnull(a,b)语法 如果a的值为null赋值为b
+14.order by 多个按照,隔开 不用and连接
+15.between函数 between and   时间函数字符串  前小后大
+16.假设需要统计a list的特定条件的值 比如  a<10 需要用sum函数而不是count函数
