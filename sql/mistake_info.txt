@@ -13,3 +13,4 @@
 13.order by 多个按照,隔开 不用and连接
 14.between函数 between and   时间函数字符串  前小后大
 15.假设需要统计a list的特定条件的值 比如  a<10 需要用sum函数而不是count函数
+16.取时间格式的函数date_format(dateA, '%A.%m'), group by函数是两个连接条件的时候用,去连接而不是and
