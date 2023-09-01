@@ -16,3 +16,4 @@
 16.取时间格式的函数date_format(dateA, '%A.%m'), group by函数是两个连接条件的时候用,去连接而不是and
 17.group_concat把组列表的值加在一起，group_concat(distinct(a) order by a separator ',')
 18.union 是联合两个表的结果
+19.sum(case when a is null then 1 else 0 end) = 0来判断数目
