@@ -17,3 +17,6 @@
 17.group_concat把组列表的值加在一起，group_concat(distinct(a) order by a separator ',')
 18.union 是联合两个表的结果
 19.sum(case when a is null then 1 else 0 end) = 0来判断数目
+20.where (a, b) in (select a,max(b) from) 这个样子可以接到select的max之类的查询语句
+21.SUM(amount) OVER (ORDER BY visited_on RANGE BETWEEN INTERVAL '6' DAY PRECEDING AND CURRENT ROW) AS sum_amount 窗口函数语法，
+where datediff(visited_on, (select min(visited_on) from Customer))>=6 筛选选出的条数
